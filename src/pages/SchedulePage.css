@@ -1,0 +1,63 @@
+.schedule-summary {
+  display: flex; align-items: center; gap: 12px;
+  margin-bottom: 20px;
+}
+.schedule-summary__bar-wrap {
+  flex: 1; height: 8px; border-radius: 4px; background: var(--cream-dark);
+}
+.schedule-summary__bar {
+  height: 100%; border-radius: 4px; background: var(--sage);
+  transition: width 0.5s ease;
+}
+.schedule-summary__pct { font-size: 13px; font-weight: 500; color: var(--sage-dark); white-space: nowrap; }
+
+.schedule-layout {
+  display: grid; grid-template-columns: 1fr 280px; gap: 16px; align-items: start;
+}
+
+/* ── Timeline ─────────────────────────────────────────────────── */
+.timeline { padding: 0; overflow: hidden; }
+.timeline__row {
+  display: flex; min-height: 48px;
+  border-bottom: 0.5px solid rgba(28,31,29,0.05);
+  position: relative;
+}
+.timeline__row:last-child { border-bottom: none; }
+.timeline__row--current { background: rgba(92,122,110,0.04); }
+.timeline__row--has-events { min-height: 68px; }
+
+.timeline__time {
+  width: 68px; flex-shrink: 0;
+  padding: 12px 10px 12px 16px;
+  font-size: 11px; color: var(--ink-muted);
+  display: flex; flex-direction: column; align-items: flex-end; gap: 4px;
+  border-right: 0.5px solid rgba(28,31,29,0.06);
+}
+.timeline__now-dot {
+  width: 7px; height: 7px; border-radius: 50%;
+  background: var(--sage); margin-top: 2px;
+}
+.timeline__content {
+  flex: 1; padding: 8px 12px;
+  display: flex; flex-direction: column; gap: 6px;
+}
+.timeline__event {
+  display: flex; align-items: center; justify-content: space-between;
+  padding: 8px 12px; border-radius: var(--radius-md); gap: 12px; flex-wrap: wrap;
+  font-size: 13px;
+}
+.timeline__event--pending  { background: var(--sage-light); }
+.timeline__event--taken    { background: var(--success-bg); }
+.timeline__event--missed   { background: var(--danger-bg); }
+.timeline__event--skipped  { background: var(--cream-dark); }
+.timeline__event-info { display: flex; flex-direction: column; gap: 2px; }
+.timeline__event-name { font-weight: 500; color: var(--ink); }
+.timeline__event-dose { color: var(--ink-muted); font-size: 12px; }
+.timeline__event-actions { flex-shrink: 0; }
+
+.schedule-side { display: flex; flex-direction: column; gap: 16px; position: sticky; top: 20px; }
+
+@media (max-width: 900px) {
+  .schedule-layout { grid-template-columns: 1fr; }
+  .schedule-side   { position: static; }
+}

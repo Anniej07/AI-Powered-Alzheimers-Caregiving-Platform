@@ -1,0 +1,66 @@
+.emotion-latest {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 16px;
+  margin-bottom: 24px;
+}
+.emotion-latest__card { min-height: 120px; }
+
+.tabs {
+  display: flex; gap: 4px;
+  background: var(--cream-dark); padding: 4px; border-radius: var(--radius-md);
+  width: fit-content;
+}
+.tab {
+  padding: 8px 18px; border-radius: var(--radius-sm);
+  font-size: 14px; font-weight: 400; color: var(--ink-muted);
+  transition: all var(--transition);
+}
+.tab:hover { color: var(--ink); }
+.tab--active {
+  background: var(--white); color: var(--ink); font-weight: 500;
+  box-shadow: var(--shadow-sm);
+}
+
+.face-detection {
+  display: grid; grid-template-columns: 1fr 1fr; gap: 24px; align-items: start;
+}
+.webcam-wrap { position: relative; border-radius: var(--radius-md); overflow: hidden; aspect-ratio: 4/3; background: var(--ink); }
+.webcam-overlay {
+  position: absolute; inset: 0;
+  background: rgba(28,31,29,0.6);
+  display: flex; flex-direction: column; align-items: center; justify-content: center; gap: 8px;
+}
+.emotion-btn {
+  padding: 8px 6px; border-radius: var(--radius-sm);
+  border: 1px solid rgba(28,31,29,0.1);
+  font-size: 12px; font-weight: 400; color: var(--ink-soft);
+  transition: all var(--transition); text-align: center;
+  background: var(--white);
+}
+.emotion-btn:hover { border-color: var(--sage); color: var(--sage-dark); background: var(--sage-light); }
+.emotion-btn--active { border-color: var(--sage); background: var(--sage-light); color: var(--sage-dark); font-weight: 500; }
+
+.voice-visual { display: flex; align-items: center; justify-content: center; }
+.voice-ring {
+  width: 120px; height: 120px; border-radius: 50%;
+  border: 2px solid rgba(92,122,110,0.2);
+  display: flex; align-items: center; justify-content: center;
+  transition: all 0.3s ease;
+}
+.voice-ring--active {
+  border-color: var(--sage); animation: pulse 1s ease-in-out infinite;
+  box-shadow: 0 0 0 8px rgba(92,122,110,0.08), 0 0 0 16px rgba(92,122,110,0.04);
+}
+.voice-core {
+  width: 80px; height: 80px; border-radius: 50%;
+  background: var(--cream-dark);
+  display: flex; align-items: center; justify-content: center;
+  color: var(--ink-soft); transition: all 0.3s ease;
+}
+.voice-core--active { background: var(--sage); color: var(--white); }
+
+@media (max-width: 768px) {
+  .emotion-latest { grid-template-columns: 1fr; }
+  .face-detection  { grid-template-columns: 1fr; }
+}

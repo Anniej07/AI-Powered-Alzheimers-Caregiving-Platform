@@ -1,0 +1,12 @@
+.alert-card {
+  position: relative;
+  padding-left: 20px;
+}
+.alert-card__bar {
+  position: absolute; left: 0; top: 0; bottom: 0;
+  width: 4px; border-radius: 4px 0 0 4px;
+}
+.alert-card__bar--danger { background: var(--danger); }
+.alert-card__bar--warn   { background: var(--warn); }
+.alert-card__bar--info   { background: var(--info); }
+.alert-card__bar--neutral{ background: var(--ink-muted); }

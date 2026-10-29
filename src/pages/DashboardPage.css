@@ -1,0 +1,60 @@
+.dash-stats {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 16px;
+  margin-bottom: 24px;
+}
+.dash-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr;
+  gap: 16px;
+}
+.card-title {
+  font-size: 14px; font-weight: 500; color: var(--ink-soft);
+  margin-bottom: 16px; text-transform: uppercase; letter-spacing: 0.05em; font-size: 12px;
+}
+.med-list { display: flex; flex-direction: column; gap: 10px; }
+.med-row { display: flex; align-items: center; gap: 10px; font-size: 14px; }
+.med-row__dot { width: 8px; height: 8px; border-radius: 50%; flex-shrink: 0; }
+.med-row__name { flex: 1; color: var(--ink-soft); }
+.med-row__rate { font-weight: 500; font-size: 13px; }
+.alert-list { display: flex; flex-direction: column; gap: 10px; }
+.alert-item {
+  display: flex; align-items: flex-start; gap: 10px;
+  padding: 10px 12px; border-radius: var(--radius-md);
+  background: var(--cream); font-size: 13px;
+}
+.alert-item--critical, .alert-item--high { background: var(--danger-bg); }
+.alert-item--medium { background: var(--warn-bg); }
+.alert-item__dot { width: 8px; height: 8px; border-radius: 50%; background: var(--ink-muted); margin-top: 4px; flex-shrink: 0; }
+.alert-item--critical .alert-item__dot, .alert-item--high .alert-item__dot { background: var(--danger); }
+.alert-item--medium .alert-item__dot { background: var(--warn); }
+.alert-item__title { font-weight: 500; color: var(--ink); }
+.alert-item__time  { color: var(--ink-muted); margin-top: 2px; }
+
+.patient-cards { display: grid; grid-template-columns: repeat(auto-fill, minmax(280px, 1fr)); gap: 16px; }
+.patient-card__header { display: flex; align-items: center; gap: 12px; }
+.patient-avatar {
+  width: 44px; height: 44px; border-radius: 50%;
+  background: var(--sage-light); color: var(--sage-dark);
+  display: flex; align-items: center; justify-content: center;
+  font-size: 14px; font-weight: 600; flex-shrink: 0;
+}
+.patient-card__header h4 { font-size: 15px; font-weight: 500; color: var(--ink); }
+.patient-card__alerts {
+  margin-left: auto; background: var(--danger); color: var(--white);
+  width: 22px; height: 22px; border-radius: 50%;
+  display: flex; align-items: center; justify-content: center;
+  font-size: 11px; font-weight: 600; flex-shrink: 0;
+}
+.patient-card__stats { display: grid; grid-template-columns: 1fr 1fr 1fr; gap: 8px; font-size: 13px; color: var(--ink-soft); }
+.patient-card__stats .stat-label { display: block; font-size: 11px; margin-bottom: 2px; }
+
+@media (max-width: 1100px) {
+  .dash-stats { grid-template-columns: 1fr 1fr; }
+  .dash-grid  { grid-template-columns: 1fr 1fr; }
+}
+@media (max-width: 768px) {
+  .dash-stats { grid-template-columns: 1fr 1fr; }
+  .dash-grid  { grid-template-columns: 1fr; }
+}
