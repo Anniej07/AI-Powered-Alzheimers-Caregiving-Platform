@@ -1,18 +1,33 @@
-# Node.js dependencies and cache
-node_modules/
-.cache/
-npm-debug.log*
-
-# Python cache and virtual environments
-__pycache__/
-*.py[cod]
-venv/
-.venv/
-
-# Downloaded DeepFace model weights
-emotion-inference-server/model_cache/
-
 # Environment variables and secrets
 .env
 .env.*
 !.env.example
+
+# Node.js dependencies
+**/node_modules/
+
+# Python virtual environments
+**/venv/
+**/.venv/
+
+# Python cache
+**/__pycache__/
+*.py[cod]
+
+# Model weights and caches
+**/model_cache/
+**/.deepface/
+**/.cache/
+
+# Uploads and logs
+**/uploads/
+*.log
+npm-debug.log*
+
+# Build output
+**/dist/
+**/build/
+
+# Operating system files
+.DS_Store
+Thumbs.db
